@@ -12,7 +12,7 @@ document.body.appendChild(articles);
 
 $.getJSON("https://peerj.com/articles/index.json?limit=20", function(data) {
 	$.each(data._items, function(key, item) {
-		var article = $("<a/>", { text: item.title, href: item._links.alternate["application/xml"].href });
+		var article = $("<a/>", { text: item.title, href: item._links.alternate.xml.href });
 		article.addClass("lens-article");
 		$("<li/>").append(article).appendTo(articles);
 	});
