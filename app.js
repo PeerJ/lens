@@ -4,6 +4,8 @@ $(document).one("click", ".lens-article", function(event) {
 	event.preventDefault();
 	app = new Lens({ document_url: this.href });
 	app.start();
+	
+	$('.go-back').attr('href', '.');
 });
 
 var articles = document.createElement("ul");
