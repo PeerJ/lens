@@ -1,9 +1,8 @@
-var app;
-
 $(document).one("click", ".lens-article", function(event) {
 	event.preventDefault();
-	app = new Lens({ document_url: this.href });
+	var app = new window.Lens({ document_url: this.href });
 	app.start();
+	window.app = app;
 });
 
 var articles = document.createElement("ul");
@@ -17,4 +16,3 @@ $.getJSON("https://peerj.com/articles/index.json?limit=20", function(data) {
 		$("<li/>").append(article).appendTo(articles);
 	});
 });
-
